@@ -1,49 +1,22 @@
-<% if @user_decorator.user %>
+<%= image_tag @user_decorator.image_url %>
 
-  <%= image_tag @user_decorator.image_url %>
+<h3>Name:</h3>
+<%= @user_decorator.name %>
 
-  <h3>Name:</h3>
-  <%= @user_decorator.name %>
+<h3>Username:</h3>
+<%= @user_decorator.username %>
 
-  <h3>Username:</h3>
-  <%= @user_decorator.username %>
+<h3>Email:</h3>
+<%= @user_decorator.email %>
 
-  <h3>Email:</h3>
-  <%= @user_decorator.email %>
+<h3>Website:</h3>
+<%= @user_decorator.website %>
 
-  <h3>Website:</h3>
-  <%= @user_decorator.website %>
+<h3>Github:</h3>
+<%= @user_decorator.github %>
 
-  <h3>Github:</h3>
-  <%= @user_decorator.github %>
+<h3>Twitter:</h3>
+<%= @user_decorator.twitter %>
 
-  <h3>Twitter:</h3>
-  <%= @user_decorator.twitter %>
-
-  <h3>Bio:</h3>
-  <%= @user_decorator.bio %>
-
-<% else %>
-    <%= image_tag "http://placehold.it/200x200" %>
-    <h3>Name:</h3>
-    <p>No name given</p>
-
-    <h3>Username:</h3>
-    <p>No username given</p>
-
-    <h3>Email:</h3>
-    <p>No email given</p>
-
-    <h3>Website:</h3>
-    <p>No website given</p>
-
-    <h3>Github:</h3>
-    <p>No github given</p>
-
-    <h3>Twitter:</h3>
-    <p>No twitter given</p>
-
-    <h3>Bio:</h3>
-    <p>No bio given</p>
-
-<% end %>
+<h3>Bio:</h3>
+<%= @user_decorator.bio %>
