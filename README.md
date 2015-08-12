@@ -148,22 +148,81 @@ end
 
 [Code](active_record)
 
-### Presenters
-Coming soon...
+### Presenters || Decorators
+
+In object-oriented programming, the decorator pattern (also known as Wrapper, an alternative naming shared with the Adapter pattern) is a design pattern that allows behavior to be added to an individual object, either statically or dynamically, without affecting the behavior of other objects from the same class.[1] The decorator pattern is often useful for adhering to the Single Responsibility Principle, as it allows functionality to be divided between classes with unique areas of concern.
+
+#### Example
+
+```ruby
+class UserDecorator
+	attr_reader :user
+	
+	def initialize(user)
+		@user = user
+	end
+	
+	def email
+		"The user email is: #{@user.email}"
+	end
+	
+	def birthdate
+		"#{@user}".strftime("%b %d, %Y")
+	end
+end
+```
+
+#### References
+
+- [https://en.wikipedia.org/wiki/Decorator_pattern](https://en.wikipedia.org/wiki/Decorator_pattern)
+- [https://github.com/drapergem/draper](https://github.com/drapergem/draper)
+- [http://railscasts.com/episodes/286-draper](http://railscasts.com/episodes/286-draper)
 
 ### Single Responsibility Principle
-Coming soon...
+
+In object-oriented programming, the single responsibility principle states that every class should have responsibility over a single part of the functionality provided by the software, and that responsibility should be entirely encapsulated by the class. All its services should be narrowly aligned with that responsibility.
+
+### Example
+
+```ruby
+class UserRegistration
+	attr_reader :user
+	
+	def initialize(user)
+		@user = user
+	end
+	
+	def register
+		#logic to handle registration for that user
+	end
+	
+	def success?
+		#was the registration successful?
+	end
+	.
+	.
+	.
+end
+```
+
+#### References
+
+- [https://en.wikipedia.org/wiki/Single_responsibility_principle](https://en.wikipedia.org/wiki/Single_responsibility_principle)
+- [http://railscasts.com/episodes/398-service-objects](http://railscasts.com/episodes/398-service-objects)
+- [http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod](http://butunclebob.com/ArticleS.UncleBob.PrinciplesOfOod)
+- [https://www.youtube.com/watch?v=Gt0M_OHKhQE](https://www.youtube.com/watch?v=Gt0M_OHKhQE)
 
 ### Null Object Pattern
-Coming soon...
+
+In object-oriented computer programming, a Null Object is an object with defined neutral ("null") behavior. The Null Object design pattern describes the uses of such objects and their behavior (or lack thereof). It was first published in the Pattern Languages of Program Design book series.
+
+#### References
+
+- [https://en.wikipedia.org/wiki/Null_Object_pattern](https://en.wikipedia.org/wiki/Null_Object_pattern)
+- [http://sudo.icalialabs.com/null-object-pattern/](http://sudo.icalialabs.com/null-object-pattern/)
+- [https://www.youtube.com/watch?v=9lv2lBq6x4A](https://www.youtube.com/watch?v=9lv2lBq6x4A)
 
 ### Factory
-Coming soon...
-
-### Facade
-Coming soon...
-
-### Fat Models, Skinny Controllers
 Coming soon...
 
 ### CodeRetreat
