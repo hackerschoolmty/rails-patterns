@@ -1,0 +1,82 @@
+<% if @user %>
+
+  <% if @user.image_url? %>
+    <%= image_tag @user.image_url %>
+  <% else %>
+    <%= image_tag "http://placehold.it/200x200" %>
+  <% end %>
+
+  <h3>Name:</h3>
+  <% if @user.name? %>
+    <p><%= @user.name %></p>
+  <% else %>
+    <p>No name given</p>
+  <% end %>
+
+  <h3>Username:</h3>
+  <% if @user.username? %>
+    <p><%= @user.username%></p>
+  <% else %>
+    <p>No username given</p>
+  <% end %>
+
+  <h3>Email:</h3>
+  <% if @user.email? %>
+    <p><%= @user.email %></p>
+  <% else %>
+    <p>No email given</p>
+  <% end %>
+
+  <h3>Website:</h3>
+  <% if @user.website? %>
+    <p><%= @user.website %></p>
+  <% else %>
+    <p>No website given</p>
+  <% end %>
+
+  <h3>Github:</h3>
+  <% if @user.github? %>
+    <p><%= @user.github %></p>
+  <% else %>
+    <p>No github given</p>
+  <% end %>
+
+  <h3>Twitter:</h3>
+  <% if @user.twitter? %>
+    <p><%= @user.twitter %></p>
+  <% else %>
+    <p>No twitter given</p>
+  <% end %>
+
+  <h3>Bio:</h3>
+  <% if @user.bio? %>
+    <p><%= @user.bio %></p>
+  <% else %>
+    <p>No bio given</p>
+  <% end %>
+
+<% else %>
+    <%= image_tag "http://placehold.it/200x200" %>
+
+    <h3>Name:</h3>
+    <p>No name given</p>
+
+    <h3>Username:</h3>
+    <p>No username given</p>
+
+    <h3>Email:</h3>
+    <p>No email given</p>
+
+    <h3>Website:</h3>
+    <p>No website given</p>
+
+    <h3>Github:</h3>
+    <p>No github given</p>
+
+    <h3>Twitter:</h3>
+    <p>No twitter given</p>
+
+    <h3>Bio:</h3>
+    <p>No bio given</p>
+
+<% end %>
