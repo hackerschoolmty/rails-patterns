@@ -2,103 +2,83 @@ class UserDecorator
   attr_reader :user
 
   def initialize(user)
-    @user = user
+    @user = user || NilUser.new
   end
 
   def image_url
-    if user
-      if user.image_url?
-        user.image_url
-      else
-        "http://placehold.it/200x200"
-      end
+    if user.image_url?
+      user.image_url
     else
-        "http://placehold.it/200x200"
+      "http://placehold.it/200x200"
     end
   end
 
   def name
-    if user
-      if user.name?
-        user.name
-      else
-        "No name given"
-      end
+    if user.name?
+      user.name
     else
       "No name given"
     end
   end
 
   def username
-    if user
-      if user.username?
-        user.username
-      else
-        "No username given"
-      end
+    if user.username?
+      user.username
     else
       "No username given"
     end
+  else
+    "No username given"
   end
 
   def email
-    if user
-      if user.email?
-        user.email
-      else
-        "No email given"
-      end
+    if user.email?
+      user.email
     else
       "No email given"
     end
+  else
+    "No email given"
   end
 
   def website
-    if user
-      if user.website?
-        user.website
-      else
-        "No website given"
-      end
+    if user.website?
+      user.website
     else
       "No website given"
     end
+  else
+    "No website given"
   end
 
   def github
-    if user
-      if user.github?
-        user.github
-      else
-        "No github given"
-      end
+    if user.github?
+      user.github
     else
       "No github given"
     end
+  else
+    "No github given"
   end
 
   def twitter
-    if user
-      if user.twitter?
-        user.twitter
-      else
-        "No twitter given"
-      end
+    if user.twitter?
+      user.twitter
     else
       "No twitter given"
     end
+  else
+    "No twitter given"
   end
 
   def bio
-    if user
-      if user.bio?
-        user.bio
-      else
-        "No bio given"
-      end
+    if user.bio?
+      user.bio
     else
       "No bio given"
     end
+  else
+    "No bio given"
   end
 
 
