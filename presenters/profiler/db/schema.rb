@@ -11,22 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150811234200) do
+ActiveRecord::Schema.define(version: 20150812004024) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "users", force: :cascade do |t|
-    t.string   "name"
-    t.text     "image_url"
-    t.string   "username"
-    t.string   "email"
-    t.string   "website"
-    t.string   "github"
-    t.string   "twitter"
-    t.text     "bio"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",       default: "No name given"
+    t.text     "image_url",  default: "http://placehold.it/200x200"
+    t.string   "username",   default: "No username given"
+    t.string   "email",      default: "No email given"
+    t.string   "website",    default: "No website given"
+    t.string   "github",     default: "No github given"
+    t.string   "twitter",    default: "No twitter given"
+    t.text     "bio",        default: "No bio given"
+    t.datetime "created_at",                                         null: false
+    t.datetime "updated_at",                                         null: false
   end
 
 end
