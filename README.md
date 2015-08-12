@@ -83,23 +83,23 @@ class Article < ActiveRecord::Base
 	belongs_to :author
 	
 	def author_name
-		personal_information.name
+		author.name
 	end
 	
 	def author_birthdate
-		personal_information.birthdate
+		author.birthdate
 	end
 	
 	def author_gender
-		personal_information.gender
+		author.gender
 	end
 	
 	def author_city
-		personal_information.city
+		author.city
 	end
 	
 	def author_last_name
-		personal_information.last_name
+		author.last_name
 	end
 end
 ```
