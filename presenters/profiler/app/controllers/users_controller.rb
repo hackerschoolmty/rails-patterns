@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def show
-    @user = current_user
+    @user_decorator = UserDecorator.new(current_user, view_context)
   end
 
   private
