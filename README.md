@@ -13,7 +13,6 @@ I just want to build software like a pro.
 * [Null Object Pattern](#null-object-pattern)
 * [Factory](#factory)
 * [Facade](#facade)
-* [Fat Models, Skinny Controllers](#fat-models-skinny-controllers)
 * [CodeRetreat](#coderetreat)
 
 --
@@ -223,7 +222,87 @@ In object-oriented computer programming, a Null Object is an object with defined
 - [https://www.youtube.com/watch?v=9lv2lBq6x4A](https://www.youtube.com/watch?v=9lv2lBq6x4A)
 
 ### Factory
-Coming soon...
+
+In class-based programming, the factory method pattern is a creational pattern which uses factory methods to deal with the problem of creating objects without specifying the exact class of object that will be created. This is done by creating objects via calling a factory method—either specified in an interface and implemented by child classes, or implemented in a base class and optionally overridden by derived classes—rather than by calling a constructor.
+
+#### Example
+
+```ruby
+class VehicleFactory
+  
+	def self.factory(klass)
+    { :car => Car,
+      :boat => Boat
+    }[klass].new
+	end
+end
+
+class Car
+end
+
+class Boat
+end
+
+VehicleFactory.factory :car
+```
+
+#### Facade
+
+The facade pattern (or façade pattern) is a software design pattern commonly used with object-oriented programming. The name is by analogy to an architectural facade.
+
+A facade is an object that provides a simplified interface to a larger body of code, such as a class library. A facade can:
+
+- make a software library easier to use, understand and test, since the facade has convenient methods for common tasks;
+- make the library more readable, for the same reason;
+- reduce dependencies of outside code on the inner workings of a library, since most code uses the facade, thus allowing more flexibility in developing the system;
+- wrap a poorly designed collection of APIs with a single well-designed API (as per task needs).
+
+#### Problem
+
+```ruby
+class UserDashboardController < ApplicationController
+
+    def index
+        @user = User.find(params[:user_id])
+        @notifications = @user.notifications
+        @messages = @user.messages
+        @posts = @user.posts
+    end
+end
+```
+
+#### Solution
+
+```ruby
+class UserDashboardController < ApplicationController
+
+    def index
+        user = User.find(params[:user_id])
+        @user_dashboard = UserDashboard.new(user)
+    end
+end
+
+class UserDashboard
+
+    attr_reader :user
+
+    def initialize(user = nil)
+        @user = user
+    end
+
+    def notifications
+        @user.notifications
+    end
+
+    def messages
+        @user.messages
+    end
+
+    def posts
+        @user.posts
+    end
+end  
+```
 
 ### CodeRetreat
 Coming soon...
